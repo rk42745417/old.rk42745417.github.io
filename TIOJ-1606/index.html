@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rk42745417.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="你有一個長度 $n$ 的陣列 $arr$，一開始每項都是 $0$。接著有 $q$ 筆操作，每筆操作可能是：$1\ l\ r\ a\ b$：對於所有 $l\le i\le r$，$arr_i :&#x3D; a\times (i - l + 1)\mod b$。$2\ l\ r$：詢問 $\sum_{i&#x3D;l}^r arr_i$。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIOJ-1606">
+<meta property="og:url" content="https://rk42745417.github.io/TIOJ-1606/index.html">
+<meta property="og:site_name" content="雞塊的競程隨筆">
+<meta property="og:description" content="你有一個長度 $n$ 的陣列 $arr$，一開始每項都是 $0$。接著有 $q$ 筆操作，每筆操作可能是：$1\ l\ r\ a\ b$：對於所有 $l\le i\le r$，$arr_i :&#x3D; a\times (i - l + 1)\mod b$。$2\ l\ r$：詢問 $\sum_{i&#x3D;l}^r arr_i$。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://rk42745417.github.io/TIOJ-1606/graph1.jpg">
+<meta property="og:image" content="https://rk42745417.github.io/TIOJ-1606/graph2.jpg">
+<meta property="article:published_time" content="2022-03-09T13:57:25.000Z">
+<meta property="article:modified_time" content="2022-04-03T08:32:04.993Z">
+<meta property="article:author" content="JiKuai">
+<meta property="article:tag" content="Competitive Programming">
+<meta property="article:tag" content="TIOJ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rk42745417.github.io/TIOJ-1606/graph1.jpg">
+
+
+<link rel="canonical" href="https://rk42745417.github.io/TIOJ-1606/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://rk42745417.github.io/TIOJ-1606/","path":"TIOJ-1606/","title":"TIOJ-1606"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>TIOJ-1606 | 雞塊的競程隨筆</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">雞塊的競程隨筆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">owo</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li><li class="menu-item menu-item-resources"><a href="/resources" rel="section"><i class="fa fa-book fa-fw"></i>resources</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JiKuai</p>
+  <div class="site-description" itemprop="description">一個食物想寫題解，所以他想辦法弄網站</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/rk42745417" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/rk42745417" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      其他連結
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Ji_Kuai" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Ji_Kuai" rel="noopener" target="_blank">CodeForces</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/JiKuai" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;JiKuai" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://rk42745417.github.io/TIOJ-1606/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JiKuai">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雞塊的競程隨筆">
+      <meta itemprop="description" content="一個食物想寫題解，所以他想辦法弄網站">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="TIOJ-1606 | 雞塊的競程隨筆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TIOJ-1606
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-03-09 21:57:25" itemprop="dateCreated datePublished" datetime="2022-03-09T21:57:25+08:00">2022-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-04-03 16:32:04" itemprop="dateModified" datetime="2022-04-03T16:32:04+08:00">2022-04-03</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/TIOJ-1606/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="TIOJ-1606/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>你有一個長度 $n$ 的陣列 $arr$，一開始每項都是 $0$。<br/><br>接著有 $q$ 筆操作，每筆操作可能是：<br/><br>$1\ l\ r\ a\ b$：對於所有 $l\le i\le r$，$arr_i := a\times (i - l + 1)\mod b$。<br/><br>$2\ l\ r$：詢問 $\sum_{i=l}^r arr_i$。<br/></p>
+<span id="more"></span>
+<p>$n\le 10^9, q\le 5\times 10^4, a\le 10^6, b\le 10^6$</p>
+<hr>
+<p>這題基本上動態開點會吃 TLE :(<br>所以先離散化。不難發現這個是個區間修改區間和的問題。<br>每個節點除了和以外，懶標的部份我們額外維護 $st, a, b$，代表這個節點的和是 $\sum_{i = 1}^{len} (a\times (i+st)\mod b)$，其中 $len$ 代表區間長度。這樣下推時就能很好的把這三個資訊給下推。<br/></p>
+<p>因此接下來的問題就是，給定了那三個資訊，有沒有辦法在夠快的時間內知道這個節點的和是多少？<br>首先令 $S(n)=\sum_{i=0}^n (a\times i\mod b)$，那這個節點的和會是 $S(st+len)-S(st)$，接下來我們把 $S(n)$ 給展開:<br>$$\begin{align*} S(n) &amp;=\sum_{i=0}^n (a\times i\mod b) \\ &amp;=\sum_{i=0}^n (a\times i - \lfloor \frac{a\times i}{b} \rfloor \times b) \\ &amp;=\sum_{i=0}^n a\times i - \sum_{i=0}^n \lfloor \frac{a\times i}{b} \rfloor \times b \\ &amp;= a\times \frac{n(n+1)}{2} + b\times \sum_{i=0}^n \lfloor \frac{a\times i}{b} \rfloor \end{align*}$$<br>於是問題就變成了怎麼計算最後那陀除法總和。<br>注意到如果 $a,b$ 不互質，那可以同除最大公因數來約分讓他們互質，所以我們以下考慮 $a, b$ 互質的情況。<br/></p>
+<p>如果 $a\geq b$，那 $\sum_{i=0}^n \lfloor \frac{ai}{b} \rfloor = \lfloor \frac ab \rfloor \times \frac{n(n+1)}{2} + \sum_{i=0}^n \lfloor \frac{(a\mod b)i}{b} \rfloor$，於是問題就變回 $a\lt b$了。<br/><br>接下來考慮 $a\lt b$ 且 $a\neq 0$，其實 $\sum_{i=0}^n \lfloor \frac{ai}{b} \rfloor$ 可以看成在一個 $(0,0),(n,0),(n,\frac{an}b)$ 的三角形內部（含邊上）有多少個不在 x 軸上的格子點？<br/><br>也就是下圖的藍色區域有多少格子點。<br><img src="graph1.jpg" alt="插圖"><br>只不過藍色區域似乎不太好算？<br>可是整個矩形內部的格子點數量很好算！就是 $n\times \lfloor \frac{an}{b}\rfloor$！<br/><br>而在對角線上的格子點數量呢？也很好算！因為 $a, b$ 互質，所以只有在 $i$ 是 $b$ 的倍數的時候 $\frac{ai}{b}$ 是整數。因此格子點數量就是 $\frac{n}{b}$。<br/><br>因此只要我們會算紅色區域的格子點數量，那藍色區域就是（整個矩形）-（紅色區域）+（對角線上的格子點）了！</p>
+<p>那要怎麼算紅色區域的格子點數量呢？你試著把頭往右轉 90 度看這張圖，你會發現其實他等同於這樣：<br><img src="graph2.jpg" alt="插圖2"><br>於是紅色區域的格子點數量其實就是當 $a’=b, b’=a, n’=\lfloor \frac{an}{b} \rfloor$ 時的答案了！因為 $a’\gt b’$，所以會先回到第一個 case，並且取 mod 後再回到第二個 case，因為每次取 mod 都會造成 $a$ 或 $b$ 其中一個被砍掉至少一半，所以計算的過程會在 $\mathcal{O}(\log \max(a,b))$ 的時間內跑完！<br/></p>
+<p>配上線段樹的 $\mathcal{O}(n\log n)$，整體複雜度 $\mathcal{O}(n\log n\log \max(a, b))$。<br/><br>實作的部份小心 overflow，不過因為最後輸出的答案會在 long long 範圍內，所以變數型態開 unsigned long long 就能當成在 $\mod 2^{64}$ 的情況下計算了。<br/></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">--------------              |   /</span></span><br><span class="line"><span class="comment">      |                     |  /</span></span><br><span class="line"><span class="comment">      |                     | /</span></span><br><span class="line"><span class="comment">      |             *       |/          |    |         ------            *</span></span><br><span class="line"><span class="comment">      |                     |           |    |        /      \</span></span><br><span class="line"><span class="comment">      |             |       |\          |    |       |       |\          |</span></span><br><span class="line"><span class="comment">   \  |             |       | \         |    |       |       | \         |</span></span><br><span class="line"><span class="comment">    \ |             |       |  \        |    |        \     /   \        |</span></span><br><span class="line"><span class="comment">     V              |       |   \        \__/|         -----     \       |</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EmiliaMyWife ios::sync_with_stdio(0); cin.tie(NULL);</span></span><br><span class="line"><span class="keyword">using</span> ull = <span class="keyword">uint64_t</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> EPS  = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> Lamy_is_cute = []() &#123;</span><br><span class="line">	EmiliaMyWife</span><br><span class="line">	<span class="keyword">return</span> <span class="number">48763</span>;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="comment">/*--------------------------------------------------------------------------------------*/</span></span><br><span class="line"></span><br><span class="line"><span class="function">ull <span class="title">calc</span><span class="params">(ull a, ull b, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	ull k = a / b;</span><br><span class="line">	ull extra = k * (<span class="number">1</span> + n) * n / <span class="number">2</span>;</span><br><span class="line">	a %= b;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(a == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> extra;</span><br><span class="line">	</span><br><span class="line">	ull total = a * n / b * n;</span><br><span class="line">	ull on_edge = n / b;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> total - <span class="built_in">calc</span>(b, a, a * n / b) + on_edge + extra;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ull <span class="title">cal</span><span class="params">(ull a, <span class="keyword">int</span> b, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	ull g = __gcd(a, <span class="built_in">ull</span>(b));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1LL</span> * (<span class="number">1</span> + n) * n / <span class="number">2</span> * a - <span class="built_in">calc</span>(a / g, b / g, n) * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">25</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">segtree</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">		ull v;</span><br><span class="line">		<span class="comment">// tag</span></span><br><span class="line">		<span class="keyword">int</span> fst = <span class="number">-1</span>, a, b;</span><br><span class="line">	&#125; arr[N &lt;&lt; <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> _n)</span> </span>&#123; n = _n; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">upd</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> fst, <span class="keyword">int</span> len, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">		arr[id].fst = fst;</span><br><span class="line">		arr[id].a = a;</span><br><span class="line">		arr[id].b = b;</span><br><span class="line">		arr[id].v = <span class="built_in">cal</span>(a, b, fst + len) - <span class="built_in">cal</span>(a, b, fst);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(arr[id].fst == <span class="number">-1</span>)</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">int</span> m = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">upd</span>(id &lt;&lt; <span class="number">1</span>, arr[id].fst, v[m] - v[l], arr[id].a, arr[id].b);</span><br><span class="line">		<span class="built_in">upd</span>(id &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, arr[id].fst + v[m] - v[l], v[r] - v[m], arr[id].a, arr[id].b);</span><br><span class="line">		arr[id].fst = <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">edt</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> fst, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(r &lt;= ql || qr &lt;= l)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(ql &lt;= l &amp;&amp; r &lt;= qr) &#123;</span><br><span class="line">			<span class="built_in">upd</span>(id, fst, v[r] - v[l], a, b);</span><br><span class="line">			<span class="keyword">return</span> v[r] - v[l];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">push</span>(id, l, r);</span><br><span class="line">		<span class="keyword">int</span> m = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> w = <span class="built_in">edt</span>(id &lt;&lt; <span class="number">1</span>, l, m, ql, qr, fst, a, b);</span><br><span class="line">		w += <span class="built_in">edt</span>(id &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, m, r, ql, qr, fst + w, a, b);</span><br><span class="line">		arr[id].v = arr[id &lt;&lt; <span class="number">1</span>].v + arr[id &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].v;</span><br><span class="line">		<span class="keyword">return</span> w;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">edt</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; <span class="built_in">edt</span>(<span class="number">1</span>, <span class="number">0</span>, n, l, r, <span class="number">0</span>, a, b); &#125;</span><br><span class="line">	<span class="function">ull <span class="title">que</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(r &lt;= ql || qr &lt;= l)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(ql &lt;= l &amp;&amp; r &lt;= qr)</span><br><span class="line">			<span class="keyword">return</span> arr[id].v;</span><br><span class="line">		<span class="built_in">push</span>(id, l, r);</span><br><span class="line">		<span class="keyword">int</span> m = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">que</span>(id &lt;&lt; <span class="number">1</span>, l, m, ql, qr) + <span class="built_in">que</span>(id &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, m, r, ql, qr);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> ull <span class="title">que</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> <span class="built_in">que</span>(<span class="number">1</span>, <span class="number">0</span>, n, l, r); &#125;</span><br><span class="line">&#125; tree;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, q;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; q;</span><br><span class="line">	vector&lt;tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; <span class="built_in">que</span>(q);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, t, l, r, a, b; i &lt; q; i++) &#123;</span><br><span class="line">		cin &gt;&gt; t &gt;&gt; l &gt;&gt; r;</span><br><span class="line">		<span class="keyword">if</span>(t == <span class="number">1</span>)</span><br><span class="line">			cin &gt;&gt; a &gt;&gt; b, a %= b;</span><br><span class="line">		l--;</span><br><span class="line">		que[i] = &#123;t, l, r, a, b&#125;;</span><br><span class="line">		v.<span class="built_in">push_back</span>(l);</span><br><span class="line">		v.<span class="built_in">push_back</span>(r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">	v.<span class="built_in">erase</span>(<span class="built_in">unique</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>()), v.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">	tree.<span class="built_in">init</span>(v.<span class="built_in">size</span>());</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> &amp;[_, l, r, __, ___] : que) &#123;</span><br><span class="line">		l = <span class="built_in">lower_bound</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), l) - v.<span class="built_in">begin</span>();</span><br><span class="line">		r = <span class="built_in">lower_bound</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), r) - v.<span class="built_in">begin</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[t, l, r, a, b] : que) &#123;</span><br><span class="line">		<span class="keyword">if</span>(t == <span class="number">1</span>)</span><br><span class="line">			tree.<span class="built_in">edt</span>(l, r, a, b);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			cout &lt;&lt; tree.<span class="built_in">que</span>(l, r) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+              <a href="/tags/TIOJ/" rel="tag"># TIOJ</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/TIOJ-1857/" rel="prev" title="TIOJ-1857">
+                  <i class="fa fa-chevron-left"></i> TIOJ-1857
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JiKuai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"jikuai","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

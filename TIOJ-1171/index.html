@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rk42745417.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="給一棵$N$個節點的樹(每條邊有權重$L_i$)，每個節點都是白色，以及$Q$筆操作。1 x – 將點$x$塗成黑色2 x – 詢問點$x$到所有黑點的總和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIOJ-1171">
+<meta property="og:url" content="https://rk42745417.github.io/TIOJ-1171/index.html">
+<meta property="og:site_name" content="雞塊的競程隨筆">
+<meta property="og:description" content="給一棵$N$個節點的樹(每條邊有權重$L_i$)，每個節點都是白色，以及$Q$筆操作。1 x – 將點$x$塗成黑色2 x – 詢問點$x$到所有黑點的總和">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-12-07T10:36:37.000Z">
+<meta property="article:modified_time" content="2022-04-03T08:32:04.990Z">
+<meta property="article:author" content="JiKuai">
+<meta property="article:tag" content="TIOJ">
+<meta property="article:tag" content="tree">
+<meta property="article:tag" content="centroid decomposition">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://rk42745417.github.io/TIOJ-1171/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://rk42745417.github.io/TIOJ-1171/","path":"TIOJ-1171/","title":"TIOJ-1171"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>TIOJ-1171 | 雞塊的競程隨筆</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">雞塊的競程隨筆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">owo</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li><li class="menu-item menu-item-resources"><a href="/resources" rel="section"><i class="fa fa-book fa-fw"></i>resources</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JiKuai</p>
+  <div class="site-description" itemprop="description">一個食物想寫題解，所以他想辦法弄網站</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/rk42745417" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/rk42745417" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      其他連結
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Ji_Kuai" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Ji_Kuai" rel="noopener" target="_blank">CodeForces</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/JiKuai" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;JiKuai" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://rk42745417.github.io/TIOJ-1171/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JiKuai">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雞塊的競程隨筆">
+      <meta itemprop="description" content="一個食物想寫題解，所以他想辦法弄網站">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="TIOJ-1171 | 雞塊的競程隨筆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TIOJ-1171
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-12-07 18:36:37" itemprop="dateCreated datePublished" datetime="2020-12-07T18:36:37+08:00">2020-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-04-03 16:32:04" itemprop="dateModified" datetime="2022-04-03T16:32:04+08:00">2022-04-03</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/TIOJ-1171/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="TIOJ-1171/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>給一棵$N$個節點的樹(每條邊有權重$L_i$)，每個節點都是白色，以及$Q$筆操作。<br/><br>1 x – 將點$x$塗成黑色<br/><br>2 x – 詢問點$x$到所有黑點的總和<br/></p>
+<span id="more"></span>
+<p>$1\le N\le 10^5, 1\le Q\le 10^6, 1\le L_i\le 10^7$</p>
+<hr>
+<p>重心剖分的經典題<br>將點$x$到其他點的路徑以$x$到該點的LCA分類，可以發現那些LCA正好會是$x$在重心樹上的祖先。<br/><br>令$sum_{u, v}$為重心樹上$u$為根節點的子樹裡黑點到$v$的總和，$cnt_u$為子樹內黑點的數量，$d_{u, v}$為$u$到$v$的距離<br/><br>若詢問的點為$x$，且令$q$為$p$在重心樹上的父節點($p$為$x$在重心樹上的所有祖先)，可以推出式子:<br>$$\sum (sum_{q, q} - sum_{p, q}) + (cnt_q - cnt_p) \times d_{x, q})$$<br>基本上就是不斷計算以$q$當根的答案，但還要扣掉自己所在的子樹($p$)的答案<br/><br>修改時可以很輕鬆地計算$sum_{q, q}$和$cnt_q$。<br/><br>而$d_{u, v}$可以在重心剖分時時暴力跑dfs。<br/><br>最麻煩的是$sum_{p, q}$，因為重心樹上的父子關係不等於原圖，所以$sum_{p, q}=sum_{p, p} + d_{p, q}\times cnt_p$這式子是不成立的。<br/><br>解決方法就是注意到$p$總是$q$的子節點(在重心樹上)，所以可以令$no_p = sum_{p, q}$，在將$x$塗色時時同時將$no_p$加上$d_{x, q}$就好。<br/><br>複雜度$\mathcal{O}((N+Q)logN)$。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">--------------              |   /</span></span><br><span class="line"><span class="comment">      |                     |  /</span></span><br><span class="line"><span class="comment">      |                     | /</span></span><br><span class="line"><span class="comment">      |             *       |/          |    |         ------            *</span></span><br><span class="line"><span class="comment">      |                     |           |    |        /      \</span></span><br><span class="line"><span class="comment">      |             |       |\          |    |       |       |\          |</span></span><br><span class="line"><span class="comment">   \  |             |       | \         |    |       |       | \         |</span></span><br><span class="line"><span class="comment">    \ |             |       |  \        |    |        \     /   \        |</span></span><br><span class="line"><span class="comment">     V              |       |   \        \__/|         -----     \       |</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EmiliaMyWife ios::sync_with_stdio(0); cin.tie(NULL);</span></span><br><span class="line"><span class="keyword">using</span> ll = <span class="keyword">int64_t</span>;</span><br><span class="line"><span class="keyword">using</span> ull = <span class="keyword">uint64_t</span>;</span><br><span class="line"><span class="keyword">using</span> ld = <span class="keyword">long</span> <span class="keyword">double</span>;</span><br><span class="line"><span class="keyword">using</span> uint = <span class="keyword">uint32_t</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> EPS  = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF     = <span class="number">0x3F3F3F3F</span>;</span><br><span class="line"><span class="keyword">const</span> ll LINF     = <span class="number">4611686018427387903</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD     = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="comment">/*--------------------------------------------------------------------------------------*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line">vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; edge[N];</span><br><span class="line"><span class="keyword">int</span> pa[N], sz[N], cnt[N];</span><br><span class="line">ll dis[N], no[N];</span><br><span class="line">vector&lt;ll&gt; pa_dis[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N], has[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> p)</span> </span>&#123; <span class="comment">// 重心剖分前紀錄子樹size</span></span><br><span class="line">	sz[u] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;w : edge[u])</span><br><span class="line">		<span class="keyword">if</span>(w.first != p &amp;&amp; !vis[w.first]) &#123;</span><br><span class="line">			<span class="built_in">dfs</span>(w.first, u);</span><br><span class="line">			sz[u] += sz[w.first];</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">return</span> sz[u];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">centroid</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> p, <span class="keyword">int</span> n)</span> </span>&#123; <span class="comment">// 尋找重心</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;w : edge[u])</span><br><span class="line">		<span class="keyword">if</span>(!vis[w.first] &amp;&amp; w.first != p &amp;&amp; sz[w.first] &gt; n / <span class="number">2</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">centroid</span>(w.first, u, n);</span><br><span class="line">	<span class="keyword">return</span> u;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">caldis</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> p, ll d)</span> </span>&#123; <span class="comment">// 計算對於每個點他到重心樹上的所有父節點的距離</span></span><br><span class="line">	pa_dis[u].<span class="built_in">push_back</span>(d);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;w : edge[u])</span><br><span class="line">		<span class="keyword">if</span>(!vis[w.first] &amp;&amp; w.first != p)</span><br><span class="line">			<span class="built_in">caldis</span>(w.first, u, d + w.second);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cd</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> p)</span> </span>&#123; <span class="comment">// 重心剖分</span></span><br><span class="line">	<span class="keyword">int</span> n = <span class="built_in">dfs</span>(u, u);</span><br><span class="line">	u = <span class="built_in">centroid</span>(u, u, n);</span><br><span class="line">	vis[u] = <span class="number">1</span>;</span><br><span class="line">	pa[u] = p;</span><br><span class="line">	<span class="built_in">caldis</span>(u, u, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;w : edge[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span>(vis[w.first])</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">cd</span>(w.first, u);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">edt</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123; <span class="comment">// 修改</span></span><br><span class="line">	<span class="keyword">int</span> x = u;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> h = <span class="number">0</span>; ~u; u = pa[u], h++) &#123;</span><br><span class="line">		cnt[u]++;</span><br><span class="line">		dis[u] += pa_dis[x][h];</span><br><span class="line">		<span class="keyword">if</span>(h &lt; pa_dis[x].<span class="built_in">size</span>())</span><br><span class="line">			no[u] += pa_dis[x][h + <span class="number">1</span>]; <span class="comment">// no[u]代表在以u為根的子樹在以pa[u]為根的貢獻</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">	ll res = <span class="number">0</span>, curd = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> curcnt = <span class="number">0</span>, x = u;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> h = <span class="number">0</span>; ~u; u = pa[u], h++) &#123;</span><br><span class="line">		res += (dis[u] - curd) + (cnt[u] - curcnt) * pa_dis[x][h];</span><br><span class="line">		</span><br><span class="line">		curcnt = cnt[u];</span><br><span class="line">		curd = no[u];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123; EmiliaMyWife</span><br><span class="line">	<span class="keyword">int</span> n, q;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; q;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, a, b, c; i &lt; n; i++) &#123;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">		edge[a].<span class="built_in">push_back</span>(&#123;b, c&#125;);</span><br><span class="line">		edge[b].<span class="built_in">push_back</span>(&#123;a, c&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cd</span>(<span class="number">0</span>, <span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="built_in">reverse</span>(pa_dis[i].<span class="built_in">begin</span>(), pa_dis[i].<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> t, x;</span><br><span class="line">	<span class="keyword">while</span>(q--) &#123;</span><br><span class="line">		cin &gt;&gt; t &gt;&gt; x;</span><br><span class="line">		<span class="keyword">if</span>(t == <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(has[x])</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			has[x] = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">edt</span>(x);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			cout &lt;&lt; <span class="built_in">query</span>(x) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIOJ/" rel="tag"># TIOJ</a>
+              <a href="/tags/tree/" rel="tag"># tree</a>
+              <a href="/tags/centroid-decomposition/" rel="tag"># centroid decomposition</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020NPSC/" rel="prev" title="2020NPSC">
+                  <i class="fa fa-chevron-left"></i> 2020NPSC
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/TIOJ-1069/" rel="next" title="TIOJ-1069">
+                  TIOJ-1069 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JiKuai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"jikuai","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

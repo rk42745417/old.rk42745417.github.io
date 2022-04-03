@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rk42745417.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最後一次的全國賽。去年四等一連三等獎都沒有真的讓我很挫折，我很害怕今年又發生相同的事，所以最大目標就是拿到三等獎以上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021-NHSPC">
+<meta property="og:url" content="https://rk42745417.github.io/2021-NHSPC/index.html">
+<meta property="og:site_name" content="雞塊的競程隨筆">
+<meta property="og:description" content="最後一次的全國賽。去年四等一連三等獎都沒有真的讓我很挫折，我很害怕今年又發生相同的事，所以最大目標就是拿到三等獎以上。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://rk42745417.github.io/2021-NHSPC/scoring.png">
+<meta property="article:published_time" content="2021-12-19T10:19:33.000Z">
+<meta property="article:modified_time" content="2022-04-03T08:32:04.993Z">
+<meta property="article:author" content="JiKuai">
+<meta property="article:tag" content="Competitive Programming">
+<meta property="article:tag" content="experience">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rk42745417.github.io/2021-NHSPC/scoring.png">
+
+
+<link rel="canonical" href="https://rk42745417.github.io/2021-NHSPC/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://rk42745417.github.io/2021-NHSPC/","path":"2021-NHSPC/","title":"2021-NHSPC"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2021-NHSPC | 雞塊的競程隨筆</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">雞塊的競程隨筆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">owo</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li><li class="menu-item menu-item-resources"><a href="/resources" rel="section"><i class="fa fa-book fa-fw"></i>resources</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E5%89%8D"><span class="nav-number">1.</span> <span class="nav-text">賽前</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B0%8F%E6%99%82"><span class="nav-number">2.</span> <span class="nav-text">第一小時</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B0%8F%E6%99%82"><span class="nav-number">3.</span> <span class="nav-text">第二小時</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B0%8F%E6%99%82"><span class="nav-number">4.</span> <span class="nav-text">第三小時</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%B0%8F%E6%99%82"><span class="nav-number">5.</span> <span class="nav-text">第四小時</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E5%B0%8F%E6%99%82"><span class="nav-number">6.</span> <span class="nav-text">第五小時</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%BD%E5%BE%8C"><span class="nav-number">7.</span> <span class="nav-text">賽後</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B9%8B%E5%BE%8C"><span class="nav-number">8.</span> <span class="nav-text">之後</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JiKuai</p>
+  <div class="site-description" itemprop="description">一個食物想寫題解，所以他想辦法弄網站</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/rk42745417" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/rk42745417" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      其他連結
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Ji_Kuai" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Ji_Kuai" rel="noopener" target="_blank">CodeForces</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/JiKuai" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;JiKuai" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://rk42745417.github.io/2021-NHSPC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JiKuai">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雞塊的競程隨筆">
+      <meta itemprop="description" content="一個食物想寫題解，所以他想辦法弄網站">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2021-NHSPC | 雞塊的競程隨筆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2021-NHSPC
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2021-12-19 18:19:33" itemprop="dateCreated datePublished" datetime="2021-12-19T18:19:33+08:00">2021-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-04-03 16:32:04" itemprop="dateModified" datetime="2022-04-03T16:32:04+08:00">2022-04-03</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021-NHSPC/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021-NHSPC/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>最後一次的全國賽。<br>去年四等一連三等獎都沒有真的讓我很挫折，我很害怕今年又發生相同的事，所以最大目標就是拿到三等獎以上。</p>
+<span id="more"></span>
+<h1 id="賽前"><a href="#賽前" class="headerlink" title="賽前"></a>賽前</h1><p>今年從師大改到了清大舉辦，可是多了一堆超怪的規定，比如說不能帶自己文具只能使用他們給原子筆跟紙，所以當你想用尺劃線或者想用立可帶把你寫錯的東西修改一下都沒辦法。<br>而且不能吃自己的食物，所以賽前買的一堆巧克力通通都沒辦法吃，如果是去年全國賽或者是像選訓內，外面有一堆東西可以吃就算了，清大這邊給的食物就只有豆乾跟麵包之類的，五個小時的比賽連個能夠快速補充血糖的東西都沒有= =;</p>
+<h1 id="第一小時"><a href="#第一小時" class="headerlink" title="第一小時"></a>第一小時</h1><p>開場先遵循策略，把 vimrc 跟 defaut code 打完，然後就把題目全部看過一次。<br>題本超級無敵厚，有 9 題，而且每一題都佔好幾頁。<br>光讀完全部題目就花了 40 分鐘，而且後來才發現到這麼多題目的比賽不該一次把題目看完，因為看到後面發現時間過去很多就會變得很煩躁，導致後面的水題也沒有馬上發現。</p>
+<p>總之看完後就直接先把 pA 翻綠。<br><em><strong>pA AC 0:45:46</strong></em></p>
+<p>然後看了 pB，發現可以直接點到點距離配上點到直線的距離公式。點到直線的距離公式只要先法向量把方程式弄出來就好了，可是問題來了，點到直線的距離公式到底長怎樣…<br>記憶中他的長相就是 $\frac{|\cdots|}{\sqrt{\text{某些東西的平方和}}}$，因為手上的參數就只有 $ax+by+c=0$ 的 $a,b,c$ 已經點 $(x,y)$ 的 $x,y$，所以開始到處亂推，最後推出一個稍微手算一些測資都正確的算式就拿來用了。<br/></p>
+<h1 id="第二小時"><a href="#第二小時" class="headerlink" title="第二小時"></a>第二小時</h1><p>然後發現範測還是錯，才發現要判斷垂點不在線段上，印象中肯定是簡單計幾，可是我還是想了好久才想到可以兩次內積= =;<br><em><strong>pB AC 1:12:20</strong></em></p>
+<p>接下來就照著看 pC，但是想了大概半個小時還是沒什麼想法，後來覺得這題應該蠻難的所以就跳過了。<br>看了 pD 覺得應該可以二分搜，可是二分搜完變成一堆有向圖的連通塊還是不會構造，後來突然想到會不會只要有拓樸就能構造，有了這個假設就想到直接照著拓樸序就可以了。</p>
+<h1 id="第三小時"><a href="#第三小時" class="headerlink" title="第三小時"></a>第三小時</h1><p>實作出了不少 bug，但還不算太糟。<br><em><strong>pD 14/100 TLE 2:01:29</strong></em><br>檢查了自己的 code 覺得沒什麼錯誤，所以覺得是被卡常了，改成不要每次蓋新圖，直接在同張圖上遍歷再慢慢檢查邊權。<br><em><strong>pD 6/100 TLE 2:07:45</strong></em><br>因為連 8 分子題都沒拿到了，所以就確定是卡常。<br>那就把邊權給 sort 然後就能適時的 break。<br><em><strong>pD 14/100 TLE 2:12:40</strong></em><br>常數應該比一開始每次二分搜都建圖建圖還小，可是還是沒過。<br>這個時候在想要不要先丟掉這題了，畢竟也在這題花了快半個小時，只是這題 86 分實在是太肥了，讓我很不想放掉他。<br>再想一下想到把邊權離散化再二分搜，這樣二分搜的複雜度可以從 $\mathcal{O}(\log C)$ 變成 $\mathcal{O}(\log N)$。</br><br><em><strong>pD AC 2:23:19</strong></em><br>到這邊心態已經有點小炸了，因為比賽快過半分數只有這樣，不過我先相信今年題目很難來穩住心態。</p>
+<p>上個廁所回來後，因為 E,F 的題目真的好難理解，所以先再仔細的看過 G。<br>結果發現他是樹壓平裸題@@，為什麼我第一輪沒發現這件事。<br><em><strong>pG AC 2:47:11</strong></em><br>然後很好笑的一件事發生了，我在測範測的時候發現我怎麼輸入一筆詢問他就輸出了，後來我才發現我的 defaut code 沒有把 IO 優化叫出來@@<br>會不會 pD 是因為 IO 被卡常？但我已經懶得回頭測了</p>
+<p>之後決定先往後面看，H 先寫個爆搜解來用。<br><em><strong>pH 15/100 2:53:09</strong></em><br>之後花一段時間想了一個構造法，然後寫完後拿來跟爆搜解對對看<br><em><strong>pH 40/100 2:58:35</strong></em></p>
+<h1 id="第四小時"><a href="#第四小時" class="headerlink" title="第四小時"></a>第四小時</h1><p>嘗試唬爛一下第三子題<br><em><strong>pH 40/100 3:00:58</strong></em><br>又 claim 說肯定是拔前後綴會最優，不過寫起來頗囉唆的。<br><em><strong>pH 40/100 3:21:51</strong></em><br>大概看過一下 code 沒有 bug，因為不確定是少考慮 case 還是 claim 根本是錯的，剩下一個半小時我沒有時間繼續浪費在這裡了。</p>
+<p>看了 pI 才發現感覺水水的，我第一輪到底在幹麻= =;<br>然後我到現在才意識到題目不是按照難度排，好好笑。<br>先寫個線性解確定推的式子是對的。<br><em><strong>pI 64/100 3:42:46</strong></em><br>然後就把式子整理一下弄成一個四階方陣。<br><em><strong>pI AC 3:58:31</strong></em></p>
+<h1 id="第五小時"><a href="#第五小時" class="headerlink" title="第五小時"></a>第五小時</h1><p>最後一個小時，手上題目剩 C,E,F,H，因為 C, H 已經花過不少時間想過了，所以就從 E,F 下手。<br>我自己覺得我應該要再拿一題 AC 才會安全，所以我先從 E 開始想，結果除了第一子題以外都沒什麼想法，只好先把第一子題拿掉。<br><em><strong>pE 19/100 4:21:30</strong></em><br>然後又花了一點時間給自己想，只是還是沒結果。<br>時間快沒了只好跳去 F。</p>
+<p>F 也是滿腦子都是背包zzz，但還是花了很多時間想，最後真的沒時間了只好把預算很少的子題拿掉。<br>寫完後測範測一直怪怪的，才發現自己看錯題目= =;<br>所以又花時間改了一些地方，改完後剩最後一分鐘看範測都過了就上傳。<br><em><strong>pF 0/100 4:59:23</strong></em></p>
+<p><img src="scoring.png"></p>
+<h1 id="賽後"><a href="#賽後" class="headerlink" title="賽後"></a>賽後</h1><p>我其實蠻緊張的，因為我覺得 pF 還蠻可作的，所以我拿 0 分超級不應該。然後別人問我分數我也不知道，因為我最後時間都在搞 pF 根本沒去算每題得分。</p>
+<p>拿到手機看了記分板發現三等當下還蠻開心的，畢竟達成了賽前目標。<br>但是只有那當下。<br>「三等終於拿到了，明年就能劍指二等」…正要這麼想著的時候，才發現自己已經是最後一年了。<br>從高一開始就想著三年內要拿過一次二等以上，而機會已經沒了。<br>接下來看著盯著記分板，什麼話都說不出來，就呆站在放置行李那邊，其他人都走了而工作人員來叫我的時候我才回神過來把行李收一收去台達館等頒獎。</p>
+<h1 id="之後"><a href="#之後" class="headerlink" title="之後"></a>之後</h1><p>仔細回想著賽中，但也想不到什麼重大失誤可以讓我後悔，就只有沒做出大家都做出來的 pF 很虧而已。<br>可是做不出題目能後悔什麼？就只有自己太爛。</p>
+<p>四模拿了 23/400 分後，我整個陷入最低潮。當時根本不想打開 vim，因為一打開就會想到四模的燒雞慘況。就這樣到了 APIO 前都沒什麼打 code，所以 APIO 也很理所當然的打很差。<br>用著學校課業的藉口讓自己躲避競程，就這樣到了暑假卻也還沒振作。</p>
+<p>一直到開學之後才終於回想起自己還有最後一年，可是此時回過神來發現已經一堆人都用著火箭般的速度超越我，而我才剛要重新起跑。<br>雖然之後盡可能的照著自己步調練習，盡可能的不去看其他人。<br>可是每次看到別人的表現就會讓自己更害怕，壓力也就越來越大。<br>得到這樣的成績我也只有自責的權利，很想要怨天尤人但自己也知道不能。<br>昨天回到家就坐在電腦前滑著社群，曾經幾度感覺差點哭出來。<br>從沒想過失去了「下次再加油」的權利會是這麼痛苦。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+              <a href="/tags/experience/" rel="tag"># experience</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/BOI-2014-Portals/" rel="prev" title="BOI 2014 Portals">
+                  <i class="fa fa-chevron-left"></i> BOI 2014 Portals
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/ARC85-NRE/" rel="next" title="ARC85-NRE">
+                  ARC85-NRE <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JiKuai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"jikuai","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

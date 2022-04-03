@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rk42745417.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言這次打得跟去年燒雞比起來好多了&gt;&lt;以下題目可能會有雷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="109學年度北二區資訊學科能力競賽">
+<meta property="og:url" content="https://rk42745417.github.io/109%E5%AD%B8%E5%B9%B4%E5%BA%A6%E5%8C%97%E4%BA%8C%E5%8D%80%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%A7%91%E8%83%BD%E5%8A%9B%E7%AB%B6%E8%B3%BD/index.html">
+<meta property="og:site_name" content="雞塊的競程隨筆">
+<meta property="og:description" content="前言這次打得跟去年燒雞比起來好多了&gt;&lt;以下題目可能會有雷">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-11-04T14:07:50.000Z">
+<meta property="article:modified_time" content="2022-04-03T08:32:04.990Z">
+<meta property="article:author" content="JiKuai">
+<meta property="article:tag" content="Competitive Programming">
+<meta property="article:tag" content="experience">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://rk42745417.github.io/109%E5%AD%B8%E5%B9%B4%E5%BA%A6%E5%8C%97%E4%BA%8C%E5%8D%80%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%A7%91%E8%83%BD%E5%8A%9B%E7%AB%B6%E8%B3%BD/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://rk42745417.github.io/109%E5%AD%B8%E5%B9%B4%E5%BA%A6%E5%8C%97%E4%BA%8C%E5%8D%80%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%A7%91%E8%83%BD%E5%8A%9B%E7%AB%B6%E8%B3%BD/","path":"109學年度北二區資訊學科能力競賽/","title":"109學年度北二區資訊學科能力競賽"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>109學年度北二區資訊學科能力競賽 | 雞塊的競程隨筆</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">雞塊的競程隨筆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">owo</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li><li class="menu-item menu-item-resources"><a href="/resources" rel="section"><i class="fa fa-book fa-fw"></i>resources</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">題目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%8D%88%E5%A0%B4-%E4%B8%89%E5%B0%8F%E6%99%82-5%E9%A1%8C-%E6%AF%8F%E9%A1%8C20%E5%88%86"><span class="nav-number">2.1.</span> <span class="nav-text">上午場(三小時 5題 每題20分)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pA-20-20"><span class="nav-number">2.1.1.</span> <span class="nav-text">pA 20&#x2F;20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pB-20-20"><span class="nav-number">2.1.2.</span> <span class="nav-text">pB 20&#x2F;20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pC-20-20"><span class="nav-number">2.1.3.</span> <span class="nav-text">pC 20&#x2F;20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pD-20-20"><span class="nav-number">2.1.4.</span> <span class="nav-text">pD 20&#x2F;20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pE-20-20"><span class="nav-number">2.1.5.</span> <span class="nav-text">pE 20&#x2F;20</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E5%8D%88%E5%A0%B4-2%E5%B0%8F%E6%99%82-3%E9%A1%8C-1%E9%A1%8C20%E5%88%86"><span class="nav-number">2.2.</span> <span class="nav-text">下午場(2小時 3題 1題20分)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pA-12-20"><span class="nav-number">2.2.1.</span> <span class="nav-text">pA 12&#x2F;20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pB-20-20-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">pB 20&#x2F;20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pC-4-20"><span class="nav-number">2.2.3.</span> <span class="nav-text">pC 4&#x2F;20</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">2.3.</span> <span class="nav-text">正文</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JiKuai</p>
+  <div class="site-description" itemprop="description">一個食物想寫題解，所以他想辦法弄網站</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/rk42745417" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/rk42745417" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      其他連結
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Ji_Kuai" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Ji_Kuai" rel="noopener" target="_blank">CodeForces</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/JiKuai" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;JiKuai" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://rk42745417.github.io/109%E5%AD%B8%E5%B9%B4%E5%BA%A6%E5%8C%97%E4%BA%8C%E5%8D%80%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%A7%91%E8%83%BD%E5%8A%9B%E7%AB%B6%E8%B3%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JiKuai">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雞塊的競程隨筆">
+      <meta itemprop="description" content="一個食物想寫題解，所以他想辦法弄網站">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="109學年度北二區資訊學科能力競賽 | 雞塊的競程隨筆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          109學年度北二區資訊學科能力競賽
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-11-04 22:07:50" itemprop="dateCreated datePublished" datetime="2020-11-04T22:07:50+08:00">2020-11-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-04-03 16:32:04" itemprop="dateModified" datetime="2022-04-03T16:32:04+08:00">2022-04-03</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/109%E5%AD%B8%E5%B9%B4%E5%BA%A6%E5%8C%97%E4%BA%8C%E5%8D%80%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%A7%91%E8%83%BD%E5%8A%9B%E7%AB%B6%E8%B3%BD/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="109學年度北二區資訊學科能力競賽/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>這次打得跟去年燒雞比起來好多了&gt;&lt;<br>以下題目可能會有雷</p>
+<span id="more"></span>
+<h1 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h1><h2 id="上午場-三小時-5題-每題20分"><a href="#上午場-三小時-5題-每題20分" class="headerlink" title="上午場(三小時 5題 每題20分)"></a>上午場(三小時 5題 每題20分)</h2><p>分數100/100</p>
+<h3 id="pA-20-20"><a href="#pA-20-20" class="headerlink" title="pA 20/20"></a>pA 20/20</h3><blockquote>
+<p>給兩個int範圍內的整數$a, b$，求有多少位元是$a$沒有$b$有的?</p>
+</blockquote>
+<p>基本上就考位元運算，<br>差不多這樣就能拿滿20。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123; EmiliaMyWife</span><br><span class="line">	<span class="keyword">int</span> a, b, c = <span class="number">0</span>;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">40</span>; i++)</span><br><span class="line">		<span class="keyword">if</span>(!(a &gt;&gt; i &amp; <span class="number">1</span>) &amp;&amp; (b &gt;&gt; i &amp; <span class="number">1</span>))</span><br><span class="line">			c++;</span><br><span class="line">	cout &lt;&lt; c &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="pB-20-20"><a href="#pB-20-20" class="headerlink" title="pB 20/20"></a>pB 20/20</h3><blockquote>
+<p>給一個數字$N$，<br>對於一個tuple$(n1, n2, n3, n4, n5)$ $(1 \le n_1 &lt; n_2 &lt; n_3 &lt; n_4 &lt; n_5\le 30)$<br>定義以下數字:<br>a1=…<br>a2=…<br>a3=…<br>a4=…<br>a5=…<br>…代表運算細節，我忘了，不過只是拿那五個n來加減乘除。<br>求滿足a1+a2+a3+a4+a5=N的tuple數量的三次方<br>但如果數量為0，請輸出$N$乘三加上五</p>
+</blockquote>
+<p>巢狀迴圈…</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123; EmiliaMyWife</span><br><span class="line">	<span class="keyword">int</span> n, c = <span class="number">0</span>;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> n1 = <span class="number">1</span>; n1 &lt;= <span class="number">30</span>; n1++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> n2 = n1 + <span class="number">1</span>; n2 &lt;= <span class="number">30</span>; n2++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> n3 = n2 + <span class="number">1</span>; n3 &lt;= <span class="number">30</span>; n3++) &#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> n4 = n3 + <span class="number">1</span>; n4 &lt;= <span class="number">30</span>; n4++) &#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> n5 = n4 + <span class="number">1</span>; n5 &lt;= <span class="number">30</span>; n5++) &#123;</span><br><span class="line">						<span class="keyword">int</span> a1 = ...;</span><br><span class="line">						<span class="keyword">int</span> a2 = ...;</span><br><span class="line">						<span class="keyword">int</span> a3 = ...;</span><br><span class="line">						<span class="keyword">int</span> a4 = ...;</span><br><span class="line">						<span class="keyword">int</span> a5 = ...;</span><br><span class="line">						<span class="keyword">if</span>(a1 + a2 + a3 + a4 + a5 == n)</span><br><span class="line">							c++;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(c)</span><br><span class="line">		cout &lt;&lt; c * c * c &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		cout &lt;&lt; n * <span class="number">3</span> + <span class="number">5</span> &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="pC-20-20"><a href="#pC-20-20" class="headerlink" title="pC 20/20"></a>pC 20/20</h3><blockquote>
+<p>給一個凸多邊形上的$n$個頂點(不一定照順序)，再給$a, b$，求$max(ax+by), (x, y)\in \mathbb{Z}, (x,y)$在多邊形內，且還要輸出(x, y)。<br>$n\le 20, -10^5\le x_i,y_i\le 10^5$</p>
+</blockquote>
+<p>這題我是唬爛過去的，基本就是可以發現最佳解一定在凸包的最外圍(邊上or點上)，所以就直接模擬每個方向爬行(超級唬爛)。<br>聽到比較好的做法是枚舉x找上下兩點，更新答案。<br>p.s.直接代入所有頂點可以拿12分www</p>
+<h3 id="pD-20-20"><a href="#pD-20-20" class="headerlink" title="pD 20/20"></a>pD 20/20</h3><p>原題目好多廢話(? 看不太懂<br>但總之就是：</p>
+<blockquote>
+<p>給四條長度不超過18的有序且無重複序列，序列中每個數字為1到25的整數。<br>然後給$n, h$。<br>問有多少序列滿足長度為$n$且為至少$h$條序列的子序列。</p>
+</blockquote>
+<p>因為數字只有25種，所以直接$2^{25}$爆搜，可以先把序列用位元存起來加快檢查速度。</p>
+<h3 id="pE-20-20"><a href="#pE-20-20" class="headerlink" title="pE 20/20"></a>pE 20/20</h3><blockquote>
+<p>給一個只有加和乘的數學算式(字串長度不超過1500，所以數字為int範圍內的正整數)，問答案的後五位數為多少。</p>
+</blockquote>
+<p>我是直接把字串輸入進來再手動切割，用stack存最後的數字來處理乘法，過程不斷%$10^5$，後來才知道可以直接交給cin，輸入好難ww。<br/><br>不過我一開始打錯字，變成%$10^4$，丟上去拿了16分，後來發現後改成$10^5$，結果變8分，把bug找出來後再丟還是8分，此時我覺得很怪，所以把修正bug後的版本再改成%$10^4$，然後AC…<br/><br>用提問系統跟他們反映這件事也只得到no comment，出來後的確有很多人被這題給卡爛，雖然後來有rejudge，但損失不輕。我也算運氣真好(X</p>
+<h2 id="下午場-2小時-3題-1題20分"><a href="#下午場-2小時-3題-1題20分" class="headerlink" title="下午場(2小時 3題 1題20分)"></a>下午場(2小時 3題 1題20分)</h2><p>得分36/60，整個大燒雞。</p>
+<h3 id="pA-12-20"><a href="#pA-12-20" class="headerlink" title="pA 12/20"></a>pA 12/20</h3><blockquote>
+<p>給一個最高次為100的多項式函數，再給定$x, M(M &lt; 10)$，求$f(x)$的後$M$位(係數，x皆在int範圍)。<br>不足$M$位的地方要補0，<strong>如果函數值為負，那就得輸出負的值，但要把負號拿掉</strong>。<br>比如:答案為302，$M=2$，則輸出02。 答案為-205，$M=2$，則輸出05(不是95!)。</p>
+</blockquote>
+<p>因為我不會判斷正負數，所以只輸出正的然後拿12分。<br>原本以為要大數，出來後聽到一個做法是從高次往低次做，當前數字太大就可斷言正負，整個orz。</p>
+<h3 id="pB-20-20-1"><a href="#pB-20-20-1" class="headerlink" title="pB 20/20"></a>pB 20/20</h3><blockquote>
+<p>有$n$個消毒劑，消毒劑剛噴灑時會有係數$x$，且過了$t$時間後係數會變為$x-t$，給：<br/><br>每個消毒劑的噴灑時間和係數。<br>$y$，代表當前時間為第一次噴灑後過$y$時間。<br>問當前時間下所有消毒劑的係數總和為多少。</p>
+</blockquote>
+<p>數字範圍都沒給，不過其實直接$\mathcal{O}(n)$照做然後就能過了(?<br/><br>有個小陷阱就是第一次噴灑的時間不一定是0，所以不能直接拿$y$做，但是範測卻剛好都是0。</p>
+<h3 id="pC-4-20"><a href="#pC-4-20" class="headerlink" title="pC 4/20"></a>pC 4/20</h3><blockquote>
+<p>考慮某RSA加密，過程如下：<br>先選定兩個質數$p, q$，令$N=pq$。<br/><br>再找出兩個整數$e, d$，滿足$ed\equiv 1\mod (p-1)(q-1)$<br/><br>之後會有公開金鑰$N, e$，私密金鑰$N, d$。<br/><br>如果要加密的訊息為$m$，加密後為$c$，則有以下關係式<br>$$c=m^e\mod N$$<br>$$m=c^d\mod N$$<br>解密時，如果我們留著$p,q$，且定義$m_p=c^d\mod p, m_q=c^d\mod q$，那就可以利用中國剩餘定理解出$m$。<br/><br>而今天我們的$mp, mq$其中一個是錯誤的，想當然算出來的$m’$也會是錯誤的，給定$N, m’, e, c$，請還原出$p, q$。<br/><br>$N$為64位元範圍內的正整數。</p>
+</blockquote>
+<p>沒想法，我直接用根號對$N$做質因數分解拿4分，後來去問AC的人，她居然是用<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm">Pollard’s rho</a>對$N$做質因數分解ww。<br>結果還是討論不出要怎麼正常使用另外三個數字，甚至不知道題目說的中國剩餘定理要怎麼做。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>最後是以136/160，rank 5收尾。<br>雖然我覺得一整個就是運氣ww(我沒被pE的錯誤測資卡到，且pC的唬爛作法直接過)。<br>題目部分是真的很糟糕，根本沒考什麼演算法或資結，就只是數學和爆搜，然後下午的第一三題變成決勝點= =; 怪題。<br>雖然去年燒雞燒超慘，但那題目寫起來才好玩QQ<br>但至少高中的競賽之旅應該…算踏上正軌了吧(?</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+              <a href="/tags/experience/" rel="tag"># experience</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/CF-808G/" rel="prev" title="CF-808G">
+                  <i class="fa fa-chevron-left"></i> CF-808G
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/TIOJ-1383/" rel="next" title="TIOJ-1383">
+                  TIOJ-1383 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JiKuai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"jikuai","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rk42745417.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="給一座邊上帶權$T_i$的森林，加邊權為$l$邊把他們連成一棵樹，輸出最短樹直徑。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIOJ-1838">
+<meta property="og:url" content="https://rk42745417.github.io/TIOJ-1838/index.html">
+<meta property="og:site_name" content="雞塊的競程隨筆">
+<meta property="og:description" content="給一座邊上帶權$T_i$的森林，加邊權為$l$邊把他們連成一棵樹，輸出最短樹直徑。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://rk42745417.github.io/TIOJ-1838/star.png">
+<meta property="article:published_time" content="2020-08-24T15:27:03.000Z">
+<meta property="article:modified_time" content="2022-04-03T08:32:04.986Z">
+<meta property="article:author" content="JiKuai">
+<meta property="article:tag" content="TIOJ">
+<meta property="article:tag" content="greedy">
+<meta property="article:tag" content="IOI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rk42745417.github.io/TIOJ-1838/star.png">
+
+
+<link rel="canonical" href="https://rk42745417.github.io/TIOJ-1838/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://rk42745417.github.io/TIOJ-1838/","path":"TIOJ-1838/","title":"TIOJ-1838"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>TIOJ-1838 | 雞塊的競程隨筆</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">雞塊的競程隨筆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">owo</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li><li class="menu-item menu-item-resources"><a href="/resources" rel="section"><i class="fa fa-book fa-fw"></i>resources</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JiKuai</p>
+  <div class="site-description" itemprop="description">一個食物想寫題解，所以他想辦法弄網站</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/rk42745417" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/rk42745417" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      其他連結
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Ji_Kuai" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Ji_Kuai" rel="noopener" target="_blank">CodeForces</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/JiKuai" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;JiKuai" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://rk42745417.github.io/TIOJ-1838/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JiKuai">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雞塊的競程隨筆">
+      <meta itemprop="description" content="一個食物想寫題解，所以他想辦法弄網站">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="TIOJ-1838 | 雞塊的競程隨筆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TIOJ-1838
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-08-24 23:27:03" itemprop="dateCreated datePublished" datetime="2020-08-24T23:27:03+08:00">2020-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-04-03 16:32:04" itemprop="dateModified" datetime="2022-04-03T16:32:04+08:00">2022-04-03</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/TIOJ-1838/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="TIOJ-1838/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>給一座邊上帶權$T_i$的森林，加邊權為$l$邊把他們連成一棵樹，輸出最短樹直徑。</p>
+<span id="more"></span>
+<p>$N\le 10^5, 0\le M &lt; n,1\le T_i, l\le 10^4$</p>
+<hr>
+<p>*第二道靠自己寫出的IOI題目&gt;////&lt;*<br>先考慮圖上無任何邊(也就是只有$N$個點)的時候，最佳解應該是把他們連成這樣：<br/><br><img src="star.png" alt="star"><br>這樣樹直徑只會是$2l$，沒辦法再更少了。<br/><br>然後在考慮森林中的每棵樹，最佳解會是找出樹上某個點當根，並且以他當根的最大深度最小。(後來知道那叫圓心)找出那個點可以用樹dp做到，考慮以i為根最大深度，轉移時就把從父節點那一條給拉過來就好。<br>然後把根與根相接，接成上面的形狀，至於中間的點我們就選用最大深度最大的那棵樹。<br>可能會有三個case:</p>
+<ol>
+<li>本來某棵的樹直徑就已經最大</li>
+<li>最大深度第二深的樹連到中間那個</li>
+<li>第二大深度的樹連到第三大深度的樹</li>
+</ol>
+<p>這樣答案就會是$max($每棵樹的直徑$, $最大深度的樹$+l+$第二大深度的樹$, $第二大深度的樹$+2l+$第三大深度的樹$)$。<br/><br>時間複雜度$\mathcal{O}(nlogn)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">--------------              |   /</span></span><br><span class="line"><span class="comment">      |                     |  /</span></span><br><span class="line"><span class="comment">      |                     | /</span></span><br><span class="line"><span class="comment">      |             *       |/          |    |         ------            *</span></span><br><span class="line"><span class="comment">      |                     |           |    |        /      \</span></span><br><span class="line"><span class="comment">      |             |       |\          |    |       |       |\          |</span></span><br><span class="line"><span class="comment">   \  |             |       | \         |    |       |       | \         |</span></span><br><span class="line"><span class="comment">    \ |             |       |  \        |    |        \     /   \        |</span></span><br><span class="line"><span class="comment">     V              |       |   \        \__/|         -----     \       |</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EmiliaMyWife ios::sync_with_stdio(0); cin.tie(NULL);</span></span><br><span class="line"><span class="comment">/*-----------------------------------------------------------------------------------------------------*/</span></span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;&gt; edge;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; ans, dep;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> v, <span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> a : edge[v]) &#123;</span><br><span class="line">		<span class="keyword">if</span>(a.first == p)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">dfs</span>(a.first, v);</span><br><span class="line">		dep[v] = <span class="built_in">max</span>(dep[v], dep[a.first] + a.second);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> v, <span class="keyword">int</span> p, <span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">	multiset&lt;<span class="keyword">int</span>&gt; des;</span><br><span class="line">	ans[v] = <span class="built_in">max</span>(dep[v], w);</span><br><span class="line">	cur.<span class="built_in">push_back</span>(ans[v]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> &amp;[a, b] : edge[v])</span><br><span class="line">		<span class="keyword">if</span>(a != p)</span><br><span class="line">			des.<span class="built_in">insert</span>(dep[a] + b);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> &amp;[a, b] : edge[v]) &#123;</span><br><span class="line">		<span class="keyword">if</span>(a == p)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		des.<span class="built_in">erase</span>(des.<span class="built_in">find</span>(dep[a] + b));</span><br><span class="line">		<span class="built_in">dfs</span>(a, v, <span class="built_in">max</span>(w, des.<span class="built_in">size</span>() ? *des.<span class="built_in">rbegin</span>() : <span class="number">0</span>) + b);</span><br><span class="line">		des.<span class="built_in">insert</span>(dep[a] + b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="keyword">int</span> l)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> lans = <span class="number">0</span>;</span><br><span class="line">	edge.<span class="built_in">clear</span>(); edge.<span class="built_in">resize</span>(n);</span><br><span class="line">	ans.<span class="built_in">clear</span>(); ans.<span class="built_in">resize</span>(n);</span><br><span class="line">	dep.<span class="built_in">clear</span>(); dep.<span class="built_in">resize</span>(n);</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; owo;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, a, b, c; i &lt; m; i++)</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c, edge[a].<span class="built_in">push_back</span>(&#123;b, c&#125;), edge[b].<span class="built_in">push_back</span>(&#123;a, c&#125;);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(ans[i])</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">dfs</span>(i, i);</span><br><span class="line">		<span class="built_in">dfs</span>(i, i, <span class="number">0</span>);</span><br><span class="line">		lans = <span class="built_in">max</span>(lans, *<span class="built_in">max_element</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>()));</span><br><span class="line">		owo.<span class="built_in">push_back</span>(*<span class="built_in">min_element</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>()));</span><br><span class="line">		cur.<span class="built_in">clear</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(owo.<span class="built_in">begin</span>(), owo.<span class="built_in">end</span>(), greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">	<span class="keyword">if</span>(owo.<span class="built_in">size</span>() &gt; <span class="number">1</span>)</span><br><span class="line">		lans = <span class="built_in">max</span>(lans, owo[<span class="number">0</span>] + owo[<span class="number">1</span>] + l);</span><br><span class="line">	<span class="keyword">if</span>(owo.<span class="built_in">size</span>() &gt; <span class="number">2</span>)</span><br><span class="line">		lans = <span class="built_in">max</span>(lans, owo[<span class="number">1</span>] + owo[<span class="number">2</span>] + <span class="number">2</span> * l);</span><br><span class="line">	cout &lt;&lt; lans &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	EmiliaMyWife</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> n, m, l;</span><br><span class="line">	<span class="keyword">while</span>(cin &gt;&gt; n &gt;&gt; m &gt;&gt; l)</span><br><span class="line">		<span class="built_in">solve</span>(n, m, l);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIOJ/" rel="tag"># TIOJ</a>
+              <a href="/tags/greedy/" rel="tag"># greedy</a>
+              <a href="/tags/IOI/" rel="tag"># IOI</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/TIOJ-1316/" rel="prev" title="TIOJ-1316">
+                  <i class="fa fa-chevron-left"></i> TIOJ-1316
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/TIOJ-1924/" rel="next" title="TIOJ-1924">
+                  TIOJ-1924 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JiKuai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"jikuai","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

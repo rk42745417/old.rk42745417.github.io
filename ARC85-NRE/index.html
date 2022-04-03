@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rk42745417.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="你有一個序列長度為 $n$ 的序列 $a$，一開始 $a_i&#x3D;0\ \forall 1\le i\le n$，然後輸入會給你一個長度為 $n$ 的序列 $b$，並且 $b_i \in \{0, 1\}$。然後輸入會給你可以使用的 $Q$ 筆操作 $l_i,\ r_i$，代表把 $a_l,a_{l+1},a_{l+2},\cdots,a_{r-1},a_r$ 都設成 1。你可以挑一些操作出來把他給用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARC85-NRE">
+<meta property="og:url" content="https://rk42745417.github.io/ARC85-NRE/index.html">
+<meta property="og:site_name" content="雞塊的競程隨筆">
+<meta property="og:description" content="你有一個序列長度為 $n$ 的序列 $a$，一開始 $a_i&#x3D;0\ \forall 1\le i\le n$，然後輸入會給你一個長度為 $n$ 的序列 $b$，並且 $b_i \in \{0, 1\}$。然後輸入會給你可以使用的 $Q$ 筆操作 $l_i,\ r_i$，代表把 $a_l,a_{l+1},a_{l+2},\cdots,a_{r-1},a_r$ 都設成 1。你可以挑一些操作出來把他給用">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-01-13T07:17:18.000Z">
+<meta property="article:modified_time" content="2022-04-03T08:32:04.993Z">
+<meta property="article:author" content="JiKuai">
+<meta property="article:tag" content="Competitive Programming">
+<meta property="article:tag" content="dp">
+<meta property="article:tag" content="Data structure">
+<meta property="article:tag" content="AtCoder">
+<meta property="article:tag" content="ARC">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://rk42745417.github.io/ARC85-NRE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://rk42745417.github.io/ARC85-NRE/","path":"ARC85-NRE/","title":"ARC85-NRE"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ARC85-NRE | 雞塊的競程隨筆</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">雞塊的競程隨筆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">owo</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li><li class="menu-item menu-item-resources"><a href="/resources" rel="section"><i class="fa fa-book fa-fw"></i>resources</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JiKuai</p>
+  <div class="site-description" itemprop="description">一個食物想寫題解，所以他想辦法弄網站</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/rk42745417" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/rk42745417" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;rk42745417" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      其他連結
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Ji_Kuai" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Ji_Kuai" rel="noopener" target="_blank">CodeForces</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/JiKuai" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;JiKuai" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://rk42745417.github.io/ARC85-NRE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JiKuai">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雞塊的競程隨筆">
+      <meta itemprop="description" content="一個食物想寫題解，所以他想辦法弄網站">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ARC85-NRE | 雞塊的競程隨筆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ARC85-NRE
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-01-13 15:17:18" itemprop="dateCreated datePublished" datetime="2022-01-13T15:17:18+08:00">2022-01-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-04-03 16:32:04" itemprop="dateModified" datetime="2022-04-03T16:32:04+08:00">2022-04-03</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/ARC85-NRE/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="ARC85-NRE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>你有一個序列長度為 $n$ 的序列 $a$，一開始 $a_i=0\ \forall 1\le i\le n$，然後輸入會給你一個長度為 $n$ 的序列 $b$，並且 $b_i \in \{0, 1\}$。<br/><br>然後輸入會給你可以使用的 $Q$ 筆操作 $l_i,\ r_i$，代表把 $a_l,a_{l+1},a_{l+2},\cdots,a_{r-1},a_r$ 都設成 1。<br/><br>你可以挑一些操作出來把他給用在序列上，可以全用也可以不用任何操作。<br>問你操作完的最小 hamming distance 是多少。<br>其中 hamming distnace 為滿足 $a_i\neq b_i$ 的 $i$ 的數量。<br/></p>
+<span id="more"></span>
+<p>$N, Q\le 2\times 10^5$</p>
+<hr>
+<p>這題真的是個酷酷題目。<br>首先我們考慮 dp，如果 $dp_i$ 為考慮前 $i$ 個答案之類的，在遇到線段相交的情形很容易爛掉。<br/><br>所以一個維度的 dp 似乎沒辦法解決問題，只好多用一維紀錄當前這格是否為 $1$。<br/><br>可是如果 $dp_{i,j}$ 的 $j$ 只有紀錄「是不是」的狀態也很難做（你會不知道你的操作右界是作到多少）。<br/><br>所以改成令 $dp_{i,j}$ 為考慮前 $i$ 格以及所有左界不超過 $i$ 的操作的答案，且最後一個操作的右界是 $j$（如果還沒實行過操作則 $j=0$），換句話說：區間 $[i,j]$ 都是 $1$（如果 $j\lt i$ 代表第 $i$ 格是 $0$）。<br/><br>那這樣就很好做了呀！<br>當我們的 $i$ 進到了某個操作的左界，且目前的 $j$ 不超過那個操作的右界，那實施了這個操作的話就會造成 $j$ 被更新。<br/><br>然後就能順便根據 $b$ 的值來決定當前哪些的狀態答案會增加。更正式的來說令 $cost_{i, j}$ 代表當前的狀態要不要增加答案，則：<br/><br>$$cost_{i, j}=\begin{cases} 1 &amp; \text{if}\ ( b_i=0\ \&amp;\&amp;\ i\le j)\ ||\ (b_i=1\ \&amp;\&amp;\ j\lt i) \\ 0 &amp; \text{otherwise} \end{cases}$$<br>接著是 dp 轉移式：<br>$$dp_{i, j} = cost_{i, j} + \begin{cases} \min_{0\le k\le i} dp_{i-1,k} &amp; \text{if}\ \exists c \text{ such that } (l_c=i\ \&amp;\&amp;\ r_c=j) \\ dp({i-1,j}) &amp; \text{otherwise} \end{cases}$$<br>如果你像我一樣看到數學式會怕的話可以看 code：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dp[N][N], b[N]; <span class="comment">// dp[i][j] = INF forall i,j</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; que[N]; <span class="comment">// right bounds of queries that left bounds is i</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">	cin &gt;&gt; b[i];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; q; i++) &#123;</span><br><span class="line">	<span class="keyword">int</span> l, r;</span><br><span class="line">	cin &gt;&gt; l, r;</span><br><span class="line">	que[l].<span class="built_in">push_back</span>(r);</span><br><span class="line">&#125;</span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; j++)</span><br><span class="line">		dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> r : que[i]) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt;= i; k++)</span><br><span class="line">			dp[i][r] = <span class="built_in">min</span>(dp[i][r], dp[i - <span class="number">1</span>][k]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(b[i] == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">			dp[i][j]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= n; j++)</span><br><span class="line">			dp[i][j]++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但我們沒解決根本上的問題：狀態數就已經是 $\mathcal{O}(N^2)$ 了。<br/><br>這就是這題的特點，雖然沒辦法再減少狀態數了，可是轉移式十分規律。<br>每到一個新的 $i$，除了那些詢問的右界以外，剩下都只是單純的區間加值。而詢問的右界也不難，只是前綴查詢最小值再單點修改而已。<br/><br>這些都是可以用線段樹作到的。區間加值的操作只會做 $\mathcal{O}(N)$ 次，而前綴查詢最小值以及單點修改只會做 $\mathcal{O}(Q)$ 次。總共複雜度會是 $\mathcal{O}(NlogN + QlogN)$。<br/><br>雖然狀態數是 $\mathcal{O}(N^2)$，但由於轉移很規律，所以透過資料結構我們只在以上的複雜度就能把全部的狀態算完了！<br/></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">--------------              |   /</span></span><br><span class="line"><span class="comment">      |                     |  /</span></span><br><span class="line"><span class="comment">      |                     | /</span></span><br><span class="line"><span class="comment">      |             *       |/          |    |         ------            *</span></span><br><span class="line"><span class="comment">      |                     |           |    |        /      \</span></span><br><span class="line"><span class="comment">      |             |       |\          |    |       |       |\          |</span></span><br><span class="line"><span class="comment">   \  |             |       | \         |    |       |       | \         |</span></span><br><span class="line"><span class="comment">    \ |             |       |  \        |    |        \     /   \        |</span></span><br><span class="line"><span class="comment">     V              |       |   \        \__/|         -----     \       |</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) cerr &lt;&lt; <span class="meta-string">&quot;\e[1;31m&quot;</span> &lt;&lt; #x &lt;&lt; <span class="meta-string">&quot; = &quot;</span> &lt;&lt; (x) &lt;&lt; <span class="meta-string">&quot;\e[0m\n&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> print(x) emilia_mata_tenshi(#x, begin(x), end(x))</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">void</span> <span class="title">emilia_mata_tenshi</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *s, T l, T r)</span> </span>&#123;</span><br><span class="line">	cerr &lt;&lt; <span class="string">&quot;\e[1;33m&quot;</span> &lt;&lt; s &lt;&lt; <span class="string">&quot; = [&quot;</span>;</span><br><span class="line">	<span class="keyword">while</span>(l != r) &#123;</span><br><span class="line">		cerr &lt;&lt; *l;</span><br><span class="line">		cerr &lt;&lt; (++l == r ? <span class="string">&#x27;]&#x27;</span> : <span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	cerr &lt;&lt; <span class="string">&quot;\e[0m\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EmiliaMyWife ios::sync_with_stdio(0); cin.tie(NULL);</span></span><br><span class="line"><span class="keyword">using</span> ll = <span class="keyword">int64_t</span>;</span><br><span class="line"><span class="keyword">using</span> ull = <span class="keyword">uint64_t</span>;</span><br><span class="line"><span class="keyword">using</span> ld = <span class="keyword">long</span> <span class="keyword">double</span>;</span><br><span class="line"><span class="keyword">using</span> uint = <span class="keyword">uint32_t</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> EPS  = <span class="number">1e-7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF     = <span class="number">0x3F3F3F3F</span>;</span><br><span class="line"><span class="keyword">const</span> ll LINF     = <span class="number">4611686018427387903</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD     = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> Lamy_is_cute = []() &#123;</span><br><span class="line">	EmiliaMyWife</span><br><span class="line">	<span class="keyword">return</span> <span class="number">48763</span>;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="comment">/*--------------------------------------------------------------------------------------*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e5</span> + <span class="number">25</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">segtree</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> arr[N &lt;&lt; <span class="number">1</span>], tag[N], n;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> _n)</span> </span>&#123;</span><br><span class="line">		n = _n;</span><br><span class="line">		<span class="built_in">memset</span>(arr, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> arr);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">upd</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">		arr[p] += v;</span><br><span class="line">		<span class="keyword">if</span>(p &lt; n)</span><br><span class="line">			tag[p] += v;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> h = __lg(p); ~h; h--) &#123;</span><br><span class="line">			<span class="keyword">int</span> i = p &gt;&gt; h;</span><br><span class="line">			<span class="built_in">upd</span>(i, tag[i &gt;&gt; <span class="number">1</span>]);</span><br><span class="line">			<span class="built_in">upd</span>(i ^ <span class="number">1</span>, tag[i &gt;&gt; <span class="number">1</span>]);</span><br><span class="line">			tag[i &gt;&gt; <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">pull</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(; p &gt; <span class="number">1</span>; p &gt;&gt;= <span class="number">1</span>)</span><br><span class="line">			arr[p &gt;&gt; <span class="number">1</span>] = <span class="built_in">min</span>(arr[p], arr[p ^ <span class="number">1</span>]) + tag[p &gt;&gt; <span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">edt</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">		p += n;</span><br><span class="line">		<span class="built_in">push</span>(p);</span><br><span class="line">		arr[p] = <span class="built_in">min</span>(arr[p], v);</span><br><span class="line">		<span class="built_in">pull</span>(p);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> tl = l + n, tr = r + n - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(l += n, r += n; l &lt; r; l &gt;&gt;= <span class="number">1</span>, r &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(l &amp; <span class="number">1</span>)</span><br><span class="line">				<span class="built_in">upd</span>(l++, v);</span><br><span class="line">			<span class="keyword">if</span>(r &amp; <span class="number">1</span>)</span><br><span class="line">				<span class="built_in">upd</span>(--r, v);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">pull</span>(tl); <span class="built_in">pull</span>(tr);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">que</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> res = INF;</span><br><span class="line">		<span class="built_in">push</span>(l + n); <span class="built_in">push</span>(r + n - <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(l += n, r += n; l &lt; r; l &gt;&gt;= <span class="number">1</span>, r &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(l &amp; <span class="number">1</span>)</span><br><span class="line">				res = <span class="built_in">min</span>(res, arr[l++]);</span><br><span class="line">			<span class="keyword">if</span>(r &amp; <span class="number">1</span>)</span><br><span class="line">				res = <span class="built_in">min</span>(res, arr[--r]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; tree;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">arr</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		cin &gt;&gt; arr[i];</span><br><span class="line">	tree.<span class="built_in">init</span>(n + <span class="number">1</span>);</span><br><span class="line">	tree.<span class="built_in">edt</span>(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">que</span>(n + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> q;</span><br><span class="line">	cin &gt;&gt; q;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; q; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> l, r;</span><br><span class="line">		cin &gt;&gt; l &gt;&gt; r;</span><br><span class="line">		que[l].<span class="built_in">push_back</span>(r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> r : que[i]) &#123;</span><br><span class="line">			tree.<span class="built_in">edt</span>(r, tree.<span class="built_in">que</span>(<span class="number">0</span>, r + <span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(arr[i])</span><br><span class="line">			tree.<span class="built_in">add</span>(<span class="number">0</span>, i, <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			tree.<span class="built_in">add</span>(i, n + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; tree.<span class="built_in">que</span>(<span class="number">0</span>, n + <span class="number">1</span>) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+              <a href="/tags/dp/" rel="tag"># dp</a>
+              <a href="/tags/Data-structure/" rel="tag"># Data structure</a>
+              <a href="/tags/AtCoder/" rel="tag"># AtCoder</a>
+              <a href="/tags/ARC/" rel="tag"># ARC</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021-NHSPC/" rel="prev" title="2021-NHSPC">
+                  <i class="fa fa-chevron-left"></i> 2021-NHSPC
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/CEOI-2019-Magic-Tree/" rel="next" title="CEOI 2019 Magic Tree">
+                  CEOI 2019 Magic Tree <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JiKuai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"jikuai","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
