@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://rk42745417.github.io/111-1-in-NTU/</loc>
+    
+    <lastmod>2023-01-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://rk42745417.github.io/ConnectToWIFI/</loc>
     
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2022-10-12</lastmod>
     
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/about/index.html</loc>
     
-    <lastmod>2022-05-29</lastmod>
+    <lastmod>2022-10-11</lastmod>
     
   </url>
   
@@ -655,7 +662,7 @@
 
   <url>
     <loc>https://rk42745417.github.io/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -663,378 +670,385 @@
   
   <url>
     <loc>https://rk42745417.github.io/tags/Competitive-Programming/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/TOI/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/experience/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Codeforces/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/TIOJ/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/string/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/manacher/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/greedy/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/IOI/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/MST/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/kruskal/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/DSU/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/bitmask/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/dp/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/template/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/heap/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/fenwick-tree/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Syntax/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/suffix-array/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/tutorial/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/stack/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/math/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Hack/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/dijkstra/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/BackTrack/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/SCC/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Topological/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Linked-List/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/APIO/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Mo/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/segment-tree/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Hash/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/NPSC/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/tree/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/centroid-decomposition/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/bipartite-graph-matching/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/DP/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/graph/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/monotonic-queue/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/IOIC/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Flow/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/data-structure/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Binary-Search/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Competitve-Programming/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/BOI/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Data-structure/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/AtCoder/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/ARC/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/CEOI/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/binary-lifting/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Dynamic-Programming/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/vim/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Network/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rk42745417.github.io/tags/Tutorial/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2023-01-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rk42745417.github.io/tags/NTU/</loc>
+    <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
