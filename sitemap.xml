@@ -669,6 +669,13 @@
 
   
   <url>
+    <loc>https://rk42745417.github.io/tags/experience/</loc>
+    <lastmod>2023-01-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://rk42745417.github.io/tags/Competitive-Programming/</loc>
     <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
@@ -677,13 +684,6 @@
   
   <url>
     <loc>https://rk42745417.github.io/tags/TOI/</loc>
-    <lastmod>2023-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rk42745417.github.io/tags/experience/</loc>
     <lastmod>2023-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
